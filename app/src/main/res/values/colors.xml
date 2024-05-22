@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="azul_terra">#1C70C8</color>
+    <color name="vermelho_marte">#bc2731</color>
+    <color name="laranja_jupiter">#E58B22</color>
+    <color name="marrom_saturno">#8B4513</color>
+</resources>
