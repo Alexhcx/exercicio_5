@@ -38,14 +38,14 @@
                     android:textSize="45sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nome do Planeta" />
+                    android:text="Ainda no espaço..." />
 
                 <TextView
                     android:id="@+id/contagemViagens"
                     android:textSize="45sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Contagem de viagens" />
+                    android:text="Viagens realizadas: 0" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
