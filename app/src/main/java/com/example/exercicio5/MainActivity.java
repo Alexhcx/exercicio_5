@@ -20,9 +20,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private int currentPlanetIndex = 0;
     private int travelCount = 0;
 
-    // Nome dos planetas
+    // Nome dos planetas:
     private final String[] planetNames = {"Terra", "Marte", "Jupiter", "Saturno"};
+
+    //cores dos planetas:
     private int[] planetColors;
+
     //Sons dos planetas presentes na pasta res/raw
     private final int[] planetSounds = {
             R.raw.terra_som,
@@ -36,20 +39,21 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize SensorManager and Accelerometer
+        // Iniciando SensorManager e Accelerometer
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
-        // Initialize MediaPlayer
+        // Iniciando MediaPlayer
         mediaPlayer = new MediaPlayer();
 
-        // Initialize PlanetFragment
+        // Iniciando PlanetFragment
         planetFragment = new PlanetFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.exibicaoFragment, planetFragment);
         fragmentTransaction.commit();
 
+        //Definindo cores do plano de fundo, presente na pasta res/values/colors.xml
         planetColors = new int[] {
                 ContextCompat.getColor(this, R.color.azul_terra),
                 ContextCompat.getColor(this, R.color.vermelho_marte),
@@ -57,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 ContextCompat.getColor(this, R.color.marrom_saturno)
         };
 
-        // Set initial planet data
+        // Iniciando os dados iniciais
         updatePlanetData();
     }
 
@@ -70,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             float y = event.values[1];
             float z = event.values[2];
 
-            // Detecta movimento baseando nos valores do accelerometer (Valores precisam ser ajustados)
+            // Detecta movimento baseando nos valores do accelerometer (Valores precisam ser ajustados, muito sensivel)
             if (Math.abs(x) > 20 || Math.abs(y) > 20 || Math.abs(z) > 20) {
                 travelToNewPlanet();
             }
@@ -89,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     private int selectRandomPlanet() {
-        // Gera o index de forma randomica baseando no lenght da quantidade de planetas
+        // Gera o index de forma randomica baseado no lenght da quantidade de planetas
         return (int) (Math.random() * planetNames.length);
     }
 

@@ -17,7 +17,7 @@ public class PlanetFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflar o layout para o fragment
+        // Infla o layout para o fragment
         View view = inflater.inflate(R.layout.planet_fragment, container, false);
 
         // Inicializar views
